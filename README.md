@@ -173,15 +173,17 @@ this
 
 ### type: HandlerEvents
 
+<code>
 type HandlerEvents = {
-&ensp;login: [status: boolean];
-&ensp;classwork: [classwork: [Classwork](#type-classwork)];
-&ensp;schedule: [schedule: [Schedule](#type-schedule) | null];
-&ensp;ipr: [ipr: [IPR](#type-ipr) | null];
-&ensp;transcript: [transcript: [Transcript](#type-transcript) | null];
-&ensp;weekView: [weekView: [WeekView](#type-weekview) | null];
-&ensp;done: [];
+  login: [status: boolean];
+  classwork: [classwork: <a href="#type-classwork">Classwork</a>];
+  schedule: [schedule: <a href="#type-schedule">Schedule</a> | null];
+  ipr: [ipr: <a href="#type-ipr">IPR</a> | null];
+  transcript: [transcript: <a href="#type-transcript">Transcript</a> | null];
+  weekView: [weekView: <a href="#type-weekview">WeekView</a> | null];
+  done: [];
 };
+</code>
 
 ### type: Classwork
 
