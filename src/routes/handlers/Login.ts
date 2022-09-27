@@ -9,7 +9,7 @@ export async function Logon(user: string, pass: string, page: Page) {
   await page.click("#login");
   return new Promise((res) => {
     page.once("framenavigated", (resp) => {
-      res(resp.url() !== BASE_ROUTE + LOGIN_ROUTE);
+      res(!(resp.url() === BASE_ROUTE + LOGIN_ROUTE));
     });
   });
 }
