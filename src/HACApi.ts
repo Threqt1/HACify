@@ -6,6 +6,7 @@ import {
   IPRHandler,
   TranscriptsHandler,
   WeekViewHandler,
+  ReportCardHandler,
 } from "./routes/handlers.js";
 import type { Page } from "puppeteer";
 import {
@@ -40,7 +41,11 @@ async function Redirect(_data: {
   });
   let rawEmitter = new HandlerRawEventEmitter();
   rawEmitter.on(data.handler.rawEvent, (html) => {
-    data.handler.ParseData(html, data.emitter);
+    if (html === null) {
+      data.emitter.emit(data.handler.processedEvent, null);
+    } else {
+      data.handler.ParseData(html, data.emitter);
+    }
   });
   await data.handler.GetData(page, rawEmitter);
 }
@@ -52,6 +57,7 @@ export class HACApi {
     ipr: IPRHandler,
     transcript: TranscriptsHandler,
     weekView: WeekViewHandler,
+    reportCard: ReportCardHandler,
   };
   async GetData(
     user: string,

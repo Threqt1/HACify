@@ -176,7 +176,7 @@ this
 <pre>
 type HandlerEvents = {
   login: [status: boolean];
-  classwork: [classwork: <a href="#type-classwork">Classwork</a>];
+  classwork: [classwork: <a href="#type-classwork">Classwork</a> | null];
   schedule: [schedule: <a href="#type-schedule">Schedule</a> | null];
   ipr: [ipr: <a href="#type-ipr">IPR</a> | null];
   transcript: [transcript: <a href="#type-transcript">Transcript</a> | null];

@@ -2,6 +2,7 @@ import { EventEmitter } from "events";
 import type { Page } from "puppeteer";
 import type { ClassworkEventArgs } from "./handlers/Classwork";
 import type { IPREventArgs } from "./handlers/IPR";
+import type { ReportCardEventArgs } from "./handlers/ReportCard";
 import type { ScheduleEventArgs } from "./handlers/Schedule";
 import type { TranscriptEventArgs } from "./handlers/Transcript";
 import type { WeekViewEventArgs } from "./handlers/WeekView";
@@ -13,6 +14,7 @@ export type HandlerEvents = {
   ipr: IPREventArgs;
   transcript: TranscriptEventArgs;
   weekView: WeekViewEventArgs;
+  reportCard: ReportCardEventArgs;
   done: [];
 };
 
@@ -29,28 +31,28 @@ export class HandlerRawEventEmitter extends EventEmitter {
 
   public override emit<K extends keyof HandlerRawEvents>(
     eventName: K,
-    ...args: [html: string]
+    ...args: [html: string | null]
   ): boolean {
     return super.emit(eventName, ...args);
   }
 
   public override on<K extends keyof HandlerRawEvents>(
     eventName: K,
-    listener: (...args: [html: string]) => void
+    listener: (...args: [html: string | null]) => void
   ): this {
     return super.on(eventName, listener);
   }
 
   public override once<K extends keyof HandlerRawEvents>(
     eventName: K,
-    listener: (...args: [html: string]) => void
+    listener: (...args: [html: string | null]) => void
   ): this {
     return super.once(eventName, listener);
   }
 
   public override addListener<K extends keyof HandlerRawEvents>(
     eventName: K,
-    listener: (...args: [html: string]) => void
+    listener: (...args: [html: string | null]) => void
   ): this {
     return super.addListener(eventName, listener);
   }

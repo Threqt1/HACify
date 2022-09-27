@@ -14,6 +14,8 @@ async function GetData(page: Page, emitter: HandlerRawEventEmitter) {
   await page.goto(BASE_ROUTE + IPR_ROUTE, {
     waitUntil: "load",
   });
+  let currUrl = await page.url();
+  if (currUrl !== BASE_ROUTE + IPR_ROUTE) emitter.emit(EVENT, null);
   await page.waitForSelector(".sg-hac-content");
   let content = await page.content();
   emitter.emit(EVENT, content);

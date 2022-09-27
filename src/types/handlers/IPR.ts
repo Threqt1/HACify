@@ -7,6 +7,6 @@ type IPRClass = {
   prg: number | null;
 };
 
-export interface IPR {
+export type IPR = {
   reports: IPRClass[];
-}
+};

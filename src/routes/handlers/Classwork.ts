@@ -17,6 +17,8 @@ async function GetData(page: Page, emitter: HandlerRawEventEmitter) {
   await page.goto(BASE_ROUTE + CLASSWORK_ROUTE, {
     waitUntil: "load",
   });
+  let currUrl = await page.url();
+  if (currUrl !== BASE_ROUTE + CLASSWORK_ROUTE) emitter.emit(EVENT, null);
   await page.waitForSelector(".sg-hac-content");
   let firstOption: string = (await page.$eval(
     ".sg-hac-content .sg-content-grid .sg-container-content select option:nth-child(2)",
