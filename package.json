@@ -1,0 +1,34 @@
+{
+  "name": "hacify",
+  "version": "1.0.0",
+  "description": "an API for interacting with Home Acess Center",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "prebuild": "rimraf lib/",
+    "compile": "tsc",
+    "build": "npm run prebuild && npm run compile"
+  },
+  "keywords": [],
+  "author": "threqt",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.7.18",
+    "rimraf": "^3.0.2"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Threqt1/HACApi.git"
+  },
+  "files": [
+    "lib"
+  ],
+  "homepage": "https://github.com/Threqt1/HACApi#readme",
+  "dependencies": {
+    "cheerio": "1.0.0-rc.12",
+    "puppeteer": "^18.0.4",
+    "puppeteer-cluster": "^0.23.0"
+  }
+}
