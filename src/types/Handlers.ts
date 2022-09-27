@@ -6,7 +6,7 @@ import type { ScheduleEventArgs } from "./handlers/Schedule";
 import type { TranscriptEventArgs } from "./handlers/Transcript";
 import type { WeekViewEventArgs } from "./handlers/WeekView";
 
-type HandlerEvents = {
+export type HandlerEvents = {
   login: [status: boolean];
   classwork: ClassworkEventArgs;
   schedule: ScheduleEventArgs;

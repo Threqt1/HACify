@@ -71,7 +71,7 @@ Takes in a username, password, and object of events/data to be scraped and parse
 | user       | string                                 | The username to be inputted when logging in                                                                               |
 | pass       | string                                 | The password corresponding with the username inputted                                                                     |
 | events     | [HandlerOptions](#type-handleroptions) | An object containing keys corresponding to the data that should be scraped, parsed, then emitted                          |
-| retryLimit | number                                 | The amount of times to retry if scraping a page fails _(Optional)_ _Default=1_                                            |
+| retryLimit | number                                 | The amount of times to retry if scraping a page fails _(Optional)_ _Default=0_                                            |
 | timeout    | number                                 | The time to wait, in ms, until a webpage is determined unresponsive, and scraping is retried _(Optional)_ _Default=15000_ |
 
 #### Returns

@@ -38,9 +38,6 @@ async function Redirect(_data: {
       req.continue();
     }
   });
-  await page.setUserAgent(
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"
-  );
   let rawEmitter = new HandlerRawEventEmitter();
   rawEmitter.on(data.handler.rawEvent, (html) => {
     data.handler.ParseData(html, data.emitter);
@@ -62,9 +59,11 @@ export class HACApi {
     events: HandlerOptions = {
       login: true,
     },
-    retryLimit: number = 1,
+    retryLimit: number = 0,
     timeout: number = 15 * 1000
   ) {
+    if ((user ?? "").trim().length === 0 || (pass ?? "").trim().length === 0)
+      throw new Error("[HACify] - Username or Password was an empty string!");
     let dataReciever = new HandlerEventEmitter();
     let cluster = await Cluster.launch({
       concurrency: Cluster.CONCURRENCY_PAGE,
@@ -98,9 +97,6 @@ export class HACApi {
           req.continue();
         }
       });
-      await page.setUserAgent(
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"
-      );
       let result = await Logon(data.user, data.pass, page);
       if (result === false) {
         if (events.login) data.dataReciever.emit("login", false);
