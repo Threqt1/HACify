@@ -173,7 +173,7 @@ this
 
 ### type: HandlerEvents
 
-<code>
+<pre>
 type HandlerEvents = {
   login: [status: boolean];
   classwork: [classwork: <a href="#type-classwork">Classwork</a>];
@@ -183,7 +183,7 @@ type HandlerEvents = {
   weekView: [weekView: <a href="#type-weekview">WeekView</a> | null];
   done: [];
 };
-</code>
+</pre>
 
 ### type: Classwork
 
