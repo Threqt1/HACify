@@ -181,6 +181,7 @@ type HandlerEvents = {
   ipr: [ipr: <a href="#type-ipr">IPR</a> | null];
   transcript: [transcript: <a href="#type-transcript">Transcript</a> | null];
   weekView: [weekView: <a href="#type-weekview">WeekView</a> | null];
+  reportCard: [reportCard: <a href="#type-reportcard">ReportCard</a> | null];
   done: [];
 };
 </pre>
@@ -297,6 +298,44 @@ interface WeekView {
           totalPoints: number | string | null;
         }[];
       };
+    };
+  };
+}
+```
+
+## type: ReportCard
+
+```ts
+interface ReportCard {
+  [className: string]: {
+    class: {
+      course: string;
+      class: string;
+      period: string;
+      teacher: string;
+      room: string;
+    };
+    attendanceCredit: number;
+    earnedCredit: number;
+    averages: {
+      first: number | null;
+      second: number | null;
+      third: number | null;
+      exam1: number | null;
+      sem1: number | null;
+      fourth: number | null;
+      fifth: number | null;
+      sixth: number | null;
+      exam2: number | null;
+      sem2: number | null;
+    };
+    comments: {
+      first: string | null;
+      second: string | null;
+      third: string | null;
+      fourth: string | null;
+      fifth: string | null;
+      sixth: string | null;
     };
   };
 }
