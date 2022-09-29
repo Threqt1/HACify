@@ -347,6 +347,7 @@ interface ReportCard {
   - Speeds may rely on Home Access Center server speeds
   - Home Access Center website outages will cause API issues
 - API speeds are slow due to the need to scrape (upwards of 13 seconds)
+- Stability can sometimes be compromised when there is heavy load on the Home Access Center website
 
 ## Best Practices
 
