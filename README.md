@@ -1,3 +1,8 @@
+<h1 align="center">Important Message</h1>
+<p align="center">This project is no longer being supported, as there are way more efficient methods and languages for this type of project to be made in. The main purpose of this project was to learn the backend behind HAC, learn how to parse the recieved HTML, and review Typescript principles in general. Using this project past learning how it works is strongly discouraged due to it being excessively resource-hungry and slow.</p>
+
+<br/>
+
 <h1 align="center">HACify</h1>
 
 <h5 align="center">A robust API to interact with the <a href="https://homeaccess.katyisd.org/HomeAccess/Account/LogOn">Katy ISD Home Access Center</a></h5>
